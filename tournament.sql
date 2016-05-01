@@ -26,8 +26,9 @@ playerID serial primary key
 -- table of all matches in tournament
 CREATE TABLE matches
 (
-winner int references players(playerID),
-loser int references players(playerID)
+matchID serial primary key,
+winner int foreign key references players(playerID),
+loser int foreign key references players(playerID)
 );
 
 -- view used to make selecting players by wins concise
